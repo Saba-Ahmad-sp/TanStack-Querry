@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchPosts } from "../API/api";
+import { NavLink } from "react-router-dom";
 
 export const FetchRQ = () => {
   //fetching from api
@@ -17,9 +18,13 @@ export const FetchRQ = () => {
   //   }
   // };
 
-  const { data, error, isLoading, isError} = useQuery({
+  const { data, error, isLoading, isError } = useQuery({
     queryKey: ["posts"],
     queryFn: fetchPosts,
+    // gcTime: 1000,
+    // staleTime: 10000,
+    // refetchInterval: 1000,
+    // refetchIntervalInBackground: true,
   });
 
   if (isLoading) return <p>Loading...</p>;
@@ -33,10 +38,13 @@ export const FetchRQ = () => {
           return (
             <li
               key={id}
-              className="w-3/4 bg-gray-600 border-l-2 border-white rounded-md mb-4 h-auto p-6 max-w-screen-2xl text-gray-300 font-medium mx-auto my-auto"
+              className="w-3/4 bg-gray-600 border-l-2 border-white rounded-md mb-4 h-auto p-6 max-w-screen-2xl text-gray-300 font-medium mx-auto my-auto cursor-pointer"
             >
-              <p>{title}</p>
-              <p>{body}</p>
+              <NavLink to={`/rq/${id}`}>
+                <p>{id}</p>
+                <p>{title}</p>
+                <p>{body}</p>
+              </NavLink>
             </li>
           );
         })}
