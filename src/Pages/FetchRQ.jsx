@@ -72,8 +72,7 @@ export const FetchRQ = () => {
               className="w-3/4 bg-gray-600 border-l-2 border-white rounded-md mb-4 h-auto p-6 max-w-screen-2xl text-gray-300 font-medium mx-auto my-auto cursor-pointer"
             >
               <NavLink to={`/rq/${id}`}>
-                <p>{id}</p>
-                <p>{title}</p>
+                <p className="text-gray-900">{id}. {title}</p>
                 <p>{body}</p>
               </NavLink>
               <button

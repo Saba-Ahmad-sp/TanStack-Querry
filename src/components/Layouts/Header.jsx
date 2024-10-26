@@ -5,7 +5,7 @@ export const Header = () => {
     <>
       <header>
         <div className="flex flex-wrap items-center justify-between mx-auto p-4">
-          <NavLink to="/">Saba Ahmad</NavLink>
+          <NavLink to="/" className="text-2xl">Saba Ahmad</NavLink>
           <ul className="flex flex-col md:p-0 m-4 md:space-x-8 md:flex-row ">
             <li>
               <NavLink to="/">HOME</NavLink>

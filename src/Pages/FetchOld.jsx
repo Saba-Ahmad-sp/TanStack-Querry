@@ -37,7 +37,7 @@ export const FetchOld = () => {
                 key={id}
                 className="w-3/4 bg-gray-600 border-white border-l-2 rounded-md mb-4 h-auto p-6 max-w-screen-2xl text-gray-300 font-medium mx-auto my-auto cursor-pointer"
               >
-                <p>{title}</p>
+                <p className="text-gray-900">{title}</p>
                 <p>{body}</p>
               </li>
             );

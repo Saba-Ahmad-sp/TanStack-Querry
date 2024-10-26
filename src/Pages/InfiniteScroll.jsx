@@ -46,16 +46,16 @@ export const InfiniteScroll = () => {
 
   return (
     <div>
-      <h1>Infinite Scroll with React Query v5</h1>
+      <h1 className="mb-8 text-center text-3xl">Infinite Scroll with React Query v5</h1>
       {data?.pages?.map((page, index) => (
-        <ul key={index}>
+        <ul key={index} >
           {page.map((user) => (
-            <li
+            <li className="grid grid-cols-2 h-36 w-full mb-2 "
               key={user.id}
               style={{ padding: "10px", border: "1px solid #ccc" }}
             >
-              <p>{user.login}</p>
-              <img
+              <p className="flex justify-center items-center text-2xl"> {user.login}</p>
+              <img className="w-32 rounded-full "
                 src={user.avatar_url}
                 alt={user.login}
                 width={50}
